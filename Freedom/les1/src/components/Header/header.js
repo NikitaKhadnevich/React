@@ -9,7 +9,7 @@ const Header = () => {
       <div className='header'>
          <Logo className='logoHeader'
          links='#'
-         imgLink='https://images.squarespace-cdn.com/content/563d1473e4b0a2c7d9edc755/1450118280542-ILWKWQ5SFSSMD72OJXCU/MBlogo.jpg?format=1500w&content-type=image%2Fjpeg' />
+         imgLink='https://cdn.freelance.ru/img/portfolio/pics/00/34/10/3412097.jpg?mt=0a3c38dc' />
          <div className='headerMenu'>
             <Menu name='Price' className={`price`}/>
             <Menu name='Our Team' className={`team`}/>

@@ -15,8 +15,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   overflow: auto;
-  height: 90vh;
+  height: 95vh;
   display: grid;
   align-content: space-between;
+  border-radius: 20px;
 }
 

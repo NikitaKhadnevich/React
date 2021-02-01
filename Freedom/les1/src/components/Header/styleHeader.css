@@ -2,12 +2,14 @@
    display: flex;
    justify-content: space-between;
    width: 95%;
+   min-height: 10vh;
    margin: 0 auto;
    margin-top: 2.5%;
    overflow: hidden;
 }
 
 .headerMenu {
+   width: 60%;
    display: flex;
    justify-content: space-evenly;
    align-self: center;
@@ -33,7 +35,7 @@
 .headerMenu > div > a:hover{
    background-color: gray;
    padding: 10px;
-   border-radius: 5px;
+   border-radius: 20px;
    transition: .3s;
    box-shadow: 0 0 20px 5px rgba(221, 221, 221, 0.7);
 }
@@ -47,8 +49,8 @@
 }
 
 .logoHeader > a > img{
-   max-width: 100px;
-   max-height: 100%;
+
+   max-height: 7vh;
    border-radius: 15px;
    
 }

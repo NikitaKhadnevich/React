@@ -5,6 +5,7 @@ import MidBlock from './components/Midblock/midblock'
 import './App.css';
 
 
+
 function App() {
   return (
     <div className ='wrapper'>
