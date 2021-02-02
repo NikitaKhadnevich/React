@@ -1,6 +1,6 @@
-import './App.css';
-import VisualForm from './components/VisualForm';
-import SendBlock from './components/SendBlok';
+import { render } from 'react-dom';
+import SendBlock from './SendBlok';
+import VisualForm from './VisualForm';
 
 
 class App extends React.Component {
@@ -8,8 +8,8 @@ class App extends React.Component {
       data: {
          name: '',
          email: '',
-         pass: ''
-      }
+         pass:''
+      }   
    }
 }
 
@@ -32,7 +32,9 @@ render() {
       }
    } = this.state;
    return (
-      <VisualForm />
+         <>
+         <VisualForm />
+         </>
    );
 }
 }
