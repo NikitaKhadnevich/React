@@ -3,14 +3,15 @@ body {
 }
 
 .myForm {
-  width: 400px;
+  width: 450px;
   height: 300px;
   margin: 0 auto;
-  border: 2px solid whitesmoke;
   margin-top: 10%;
   display: grid;
   justify-content: center;
   align-content: space-around;
+  border-radius: 10px;
+  box-shadow: 15px 12px 28px rgba(0,0,0,0.4), 0 10px 40px rgba(0,0,0,0.3);
 
 }
 
@@ -18,9 +19,18 @@ form {
   width: 400px;
   height: 200px;
   margin: 0 auto;
-  border: 2px solid whitesmoke;
   display: grid;
   grid-gap: 20px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+input {
+  outline: none;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid rgba(152, 115, 67, 0.6);
   
 }
 
@@ -30,4 +40,22 @@ form {
   margin: 0 auto;
   height: 40px;
   align-self: center;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+.myForm button:hover {
+  background-color: burlywood;
+}
+
+.renderForm {
+  margin-top: 10px !important;
+}
+
+.renderForm > p {
+  width: 80%;
+  text-align: center;
+  align-items: center;
+  justify-self: center;
+  justify-content: center;
 }
