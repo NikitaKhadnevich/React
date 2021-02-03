@@ -6,7 +6,6 @@ const Result = () => {
    return (
       <>
       <App />
-      <RenderData />
       </>
       )
    }
