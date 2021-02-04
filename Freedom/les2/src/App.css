@@ -31,7 +31,7 @@ input {
   border-radius: 8px;
   outline: none;
   border: 1px solid rgba(152, 115, 67, 0.6);
-  
+  font-size: 1em bold;
 }
 
 .myForm button {

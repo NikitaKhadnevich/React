@@ -1,20 +1,11 @@
 
 
-export const Truef = (arg) => {
-   arg.color = 'green'
+export const InputStatus = (arg, color, opacity) => {
+   arg.color = color
    arg.border = '2px'
    arg.border = 'solid'
    arg.borderRadius = '10px'
-   arg.opacity = 0.9
-   arg.outline = 'none'
-}
-
-export const Wrong = (arg) => {
-   arg.color = 'tomato'
-   arg.border = '2px'
-   arg.border = 'solid'
-   arg.borderRadius = '10px'
-   arg.opacity = 0.9
+   arg.opacity = opacity
    arg.outline = 'none'
 }
 
@@ -26,4 +17,6 @@ export const TrueForm = (arg, color) => {
    arg.width = '400px'
    arg.borderRadius = '30px'
 }
+
+
 

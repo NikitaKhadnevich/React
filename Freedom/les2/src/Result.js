@@ -1,5 +1,5 @@
 import App from './App'
-import RenderData from './RenderData'
+import VisualForm from './VisualForm'
 
 const Result = () => {
    
