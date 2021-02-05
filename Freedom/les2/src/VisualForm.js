@@ -14,5 +14,4 @@ class VisualForm extends React.Component {
       )
    }
 }
-
 export default VisualForm
