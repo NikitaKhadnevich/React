@@ -1,15 +1,18 @@
+import React from 'react';
+class VisualForm extends React.Component {
+   constructor(props) {
+      super(props);
+      this.state = {
+      }
+   }
 
-// import React from 'react';
+   render() {
+      return (
+      <>
+         <p>{this.props.name}</p> {/* Принимаем и вывожу проп, как результат */}
+      </>
+      )
+   }
+}
 
-// const VisualForm = () => {
-
-// return (
-//       <div className='renderForm'>
-//          <p>{this.state.formName}</p>
-//          <p>{this.state.formEmail}</p>
-//          <p>{this.state.formPassw}</p>
-//       </div>
-//    )
-// }
-
-// export default VisualForm
+export default VisualForm
