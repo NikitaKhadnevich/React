@@ -48,14 +48,49 @@ input {
   background-color: burlywood;
 }
 
-.renderForm {
+.formResult {
   margin-top: 10px !important;
+
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 20px;
 }
 
-.renderForm > p {
+.formResult > p {
   width: 80%;
   text-align: center;
   align-items: center;
   justify-self: center;
   justify-content: center;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 1.5em;
+}
+
+form > input {
+  background-color: rgba(230, 251, 255, 0.864);
+}
+
+form > p {
+  transition: 2s;
+  text-align: center;
+  font-size: 1em;
+  line-height: 1em;
+  background-color: rgba(127, 255, 212, 0.219);
+  border: 10px;
+  margin: 0 auto;
+  width: 80%;
+
+}
+
+.info {
+  background-color: rgba(133, 255, 167, 0.733);
+}
+
+.warning {
+  background-color: rgb(249, 255, 73);
+}
+
+.error {
+  background-color: rgb(255, 92, 92);
 }

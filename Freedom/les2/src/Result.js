@@ -7,34 +7,48 @@ class Result extends React.Component {
       super(props)
       this.state = {
          data: {
-            name: '',
+            Parentname: '',
+            Parentemail: '',
+            Parentpassw: '',
          },
       }
    }
 
-   upDataFRST = (value) => {
+   upDataFRST = (name, email, passw) => {
       this.setState(prevState => ({
          ...prevState,
          data: {
-            name: value,
+            Parentname: name,
+            Parentemail: email,
+            Parentpassw: passw
          }
       }));
    };  /* Функция  меняет стэйт(name) у РОДИТЕЛЯ в зависимости от вэлью (коим выступает стэйт нэйм Чайлд1) Чайлд 1 */
 
    render() {
-      return (
-         <>
-         <AppCopy upDataFRST={this.upDataFRST} /> 
-         {/* Передаю солбэком в Чайлд 1 функцию РОДИТЕЛЯ */}
-         <VisualForm name={this.state.data.name} />
-         {/* Задаю название пропса для ЧАЙЛД*/}
-         </>
-      );
+      const { data: {Parentname, Parentemail, Parentpassw} } = this.state;
+        if (!Parentemail.length == 0,
+            !Parentemail.length == 0,
+            !Parentpassw == 0
+         ) {
+         return (
+            <>
+            <AppCopy upDataFRST={this.upDataFRST} /> 
+            {/* Передаю солбэком в Чайлд 1 функцию РОДИТЕЛЯ */}
+            <VisualForm 
+               visualName={'formResult'}
+               name={Parentname}
+               email={Parentemail}
+               passw={Parentpassw}/>
+            {/* Задаю название пропса для ЧАЙЛД*/}
+            </>
+         );
+      } else {
+         return (
+         <AppCopy upDataFRST={this.upDataFRST} />
+         )
+      }
    }
 }
 
 export default Result
-
-
-
- 

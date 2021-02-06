@@ -9,8 +9,13 @@ class VisualForm extends React.Component {
    render() {
       return (
       <>
-         <p>{this.props.name}</p> {/* Принимаем и вывожу проп, как результат */}
-      </>
+         <div className={this.props.visualName}>
+            <p>{this.props.name}</p>
+            <p>{this.props.email}</p>
+            <p>{this.props.passw}</p> 
+         </div>
+      </>   
+/* Принимаем и вывожу проп, как результат */
       )
    }
 }
