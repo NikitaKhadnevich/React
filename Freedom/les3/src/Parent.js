@@ -1,14 +1,61 @@
-import Ch1 from './Ch1'
-import Ch2 from './Ch2'
+import Form from './Form'
+import Table from './Table'
+import React from 'react';
 
-const Parent = () => {
-   
-   return (
-      <>
-      <Ch1 />
-      <Ch2 />
-      </>
+
+class Parent extends React.Component {
+   constructor(props) {
+      super(props)
+      this.state = {
+         data: {
+            Parentnumber: '0',
+            Parentbrand: '',
+            Parentmodel: '',
+            Parentyear: '',
+            Parentcost: '',
+         },
+      }
+   }
+   updateChild = (brand, model, year, cost) => {
+      this.setState(prevState => ({
+         ...prevState,
+         data: {
+            Parentbrand: brand,
+            Parentmodel: model,
+            Parentyear: year,
+            Parentcost: cost,
+         }
+      }))
+   }
+
+   updateAll = (arg, arg2) => {
+      return arg, arg2;
+   }
+
+   createClickController = () => {
+      return this.updateAll()
+   }
+
+   render() {
+      const { data: { Parentbrand, Parentmodel, Parentyear, Parentcost, Parentnumber} } = this.state
+      return (
+         <>
+            <Table 
+               updateAll={this.updateAll}
+               number={Parentnumber}
+               brand={Parentbrand}
+               model={Parentmodel}
+               year={Parentyear}
+               cost={Parentcost}
+            />
+            <Form 
+               updateChild={this.updateChild}
+            />
+            {/* <button onClick={this.createClickController}>Добавить</button> */}
+            {/* передали пропс на клик */}
+         </>
       )
    }
+}
 
 export default Parent
