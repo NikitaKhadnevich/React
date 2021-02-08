@@ -11,3 +11,70 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.table {
+	width: 90%;
+  margin: 0 auto;
+	margin-bottom: 20px;
+	border: 1px solid #dddddd;
+	border-collapse: collapse; 
+}
+.table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+}
+.table td {
+	border: 1px solid #dddddd;
+	padding: 5px;
+}
+
+.table tr {
+height: 30px;
+}
+
+.myForm > form{
+    width: 350px; 
+    height: 220px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    /* position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translateY(-50%);
+    transform: translateX(-50%); */
+}
+
+.myForm {
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 5%;
+  display: grid;
+  justify-content: center;
+  align-content: space-around;
+  border-radius: 10px;
+  box-shadow: 15px 12px 28px rgba(0,0,0,0.4), 0 10px 40px rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.336);
+  position: relative;
+}
+
+.myForm > button{
+height: 50px;
+width: 50%;
+margin: 0 auto;
+}
+
+button {
+  height: 50px;
+  width: 100px;
+  margin: 0 auto;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
