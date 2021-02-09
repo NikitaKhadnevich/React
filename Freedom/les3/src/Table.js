@@ -1,7 +1,6 @@
 import React from 'react';
 import './index.css';
 
-
 class Table extends React.Component {
 
    constructor(props) {
@@ -17,7 +16,6 @@ class Table extends React.Component {
          carArr: [],
       }
    }
-
 
    static getDerivedStateFromProps(props, state) {
       return({
@@ -44,38 +42,37 @@ class Table extends React.Component {
       this.createAccum()
    }
 
-
    //Сначала происходит рендер в результате чего появляется кнопка//
    
    render() {
-
       return (
          <>
-                  <table className="table">
-               <thead>
-                  <tr>
-                     <th>Number</th>
-                     <th>Brand</th>
-                     <th>Model</th>
-                     <th>Year</th>
-                     <th>Cost</th>
-                     
-                  </tr>
-               </thead>
-               {this.state.carArr.map((item, index) => {
-               return (<tbody>
-                  <tr>
-                     <td>{++index}</td>
-                     <td>{item.Cbrand}</td>
-                     <td>{item.Cmodel}</td>
-                     <td>{item.Cyear}</td>
-                     <td>{item.Ccost}</td>
-                     <td id='delete' data-num={index}>X</td>
-                  </tr>
-               </tbody>)})}
-            </table>
-            <button onClick={this.createClickTable}>Update</button>     
-            </>
+            <div className='wrappertable'>
+               <table className="table">
+                  <thead>
+                     <tr>
+                        <th>Number</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                        <th>Cost</th>
+                     </tr>
+                  </thead>
+                  {this.state.carArr.map((item, index) => {
+                  return (<tbody>
+                     <tr>
+                        <td cla>{++index}</td>
+                        <td>{item.Cbrand}</td>
+                        <td>{item.Cmodel}</td>
+                        <td>{item.Cyear}</td>
+                        <td>{item.Ccost}</td>
+                        <td id='delete' data-num={index}>X</td>
+                     </tr>
+                  </tbody>)})}
+               </table>
+               <button onClick={this.createClickTable}>Update</button>    
+            </div>    
+         </>
       )
    }
 }
