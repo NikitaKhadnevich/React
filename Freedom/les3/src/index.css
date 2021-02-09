@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #2DB4AC;
+background: -webkit-linear-gradient(top left, #2DB4AC, #AC72AA);
+background: -moz-linear-gradient(top left, #2DB4AC, #AC72AA);
+background: linear-gradient(to bottom right, #2DB4AC, #AC72AA);
 }
 
 code {
@@ -17,21 +21,36 @@ code {
   margin: 0 auto;
 	margin-bottom: 20px;
 	border: 1px solid #dddddd;
-	border-collapse: collapse; 
+	/* border-collapse: collapse;  */
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.336);
+  
 }
 .table th {
+  border-collapse: collapse; 
 	font-weight: bold;
 	padding: 5px;
 	background: #efefef;
 	border: 1px solid #dddddd;
+  
 }
 .table td {
+  border-collapse: collapse; 
 	border: 1px solid #dddddd;
 	padding: 5px;
+  color: whitesmoke
 }
 
 .table tr {
 height: 30px;
+}
+
+.myForm > form > p {
+  margin: 0;
+  text-align: left;
+  font-size: 1em;
+  line-height: 10px;
+  height: 10px;
 }
 
 .myForm > form{
@@ -54,14 +73,19 @@ height: 30px;
   width: 400px;
   height: 300px;
   margin: 0 auto;
-  margin-top: 5%;
+  margin-top: 3%;
   display: grid;
   justify-content: center;
   align-content: space-around;
   border-radius: 10px;
   box-shadow: 15px 12px 28px rgba(0,0,0,0.4), 0 10px 40px rgba(0,0,0,0.3);
   background-color: rgba(0, 0, 0, 0.336);
-  position: relative;
+  position: relative; 
+}
+
+.wrappertable {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .myForm > button{
@@ -74,7 +98,15 @@ button {
   height: 50px;
   width: 100px;
   margin: 0 auto;
-  display: flex;
   align-self: center;
   justify-content: center;
+  font-size: 1.5em;
+}
+
+.emptyField {
+  background-color: rgba(255, 0, 0, 0.432);
+}
+
+.fullField {
+  background-color: rgba(0, 255, 136, 0.459);
 }
