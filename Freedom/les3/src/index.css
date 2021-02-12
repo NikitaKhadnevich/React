@@ -104,9 +104,9 @@ button {
 }
 
 .emptyField {
-  background-color: rgba(255, 0, 0, 0.432);
+  background-color: rgb(255, 160, 116);
 }
 
 .fullField {
-  background-color: rgba(0, 255, 136, 0.459);
+  background-color: rgb(151, 255, 206);
 }

@@ -5,40 +5,67 @@ import './index.css';
 class Form extends React.Component {
    state = {
       data: {
-         number: '0',
          brand: '',
          model: '',
          year: '',
          cost: '',
       },
       formStyle: {
-         brand: '',
-         model: '',
-         year: '',
-         cost: '',
+         sbrand: '',
+         smodel: '',
+         syear: '',
+         scost: '',
       }
    };
 
-   updateData = (event, valBr, valMo, valYe, valCo) => {
-      const { name, value } = event.taget;
-      valBr = valBr.length < 1 ? 'emptyField' : 'emptyField'
-      valMo = valMo.length < 1 ? 'emptyField' : 'emptyField'
-      valYe = valYe.length < 1 ? 'emptyField' : 'emptyField'
-      valCo = valCo.length < 1 ? 'emptyField' : 'emptyField'
-
-      const checkBox = (name, value)
+   updateData = (event) => {
       const { name, value } = event.target;
-      this.setState(resState => ({
-         ...resState,
-         data: {
-            ...resState.data,
-            [name] : value
-         }
-      }))
+      const brandAlert = 
+      value.length < 3 ? 'emptyField' :
+      value.length < 15 ? 'fullField' : 'fullField' 
+
+      const modelAlert = 
+      value.length < 1 ? 'emptyField' :
+      value.length > 15 ? 'fullField' : 'fullField'
+      
+      const modelYear =
+      value.length == 4 && value.replace(/[^0-9]/g, '').length == 4 ? 'fullField' :
+      value.length !== 4 && value.replace(/[^0-9]/g, '').length !== 4 ?  'emptyField' : 'emptyField'
+
+      const modelCost =
+         value.length > 0 && value.replace(/[^0-9]/g, '').length == value.length ? 'fullField' : 'emptyField'
+
+      const checkBox = (name,value, field) => {
+         this.setState(prevState => ({
+            ...prevState,
+            data: {
+               ...prevState.data,
+               [name]: value
+            },
+            formStyle: {
+               ...prevState.formStyle,
+               [name]: field,
+            }
+         }))
+      }
+      
+      if (name === 'brand') {
+         checkBox(event.target.name, event.target.value, brandAlert)
+      }
+      if (name === 'model') {
+         checkBox(event.target.name, event.target.value, modelAlert)
+      }
+      if (name === 'year') {
+         checkBox(event.target.name, event.target.value, modelYear)
+      }
+      if (name === 'cost') {
+         checkBox(event.target.name, event.target.value, modelCost)
+      }
    }
 
    letClear = () => {
-      this.setState({ data: { brand: '', model: '', year: '', cost: '' } });
+      this.setState({ data: { brand: '', model: '', year: '', cost: '' },
+         formStyle:  { sbrand: '', smodel: '', syear: '', scost: '' } })
    }
 
    createClickForm = () => {
@@ -48,21 +75,31 @@ class Form extends React.Component {
    }
 
    doAlertClickForm = () => {
-      alert('Пожалуйста, заполните все поля')
+      alert('Пожалуйста, заполните корректно все поля')
    }
-
 
    render() {
       const { data: { brand, model, year, cost } } = this.state;
-      if (brand.length > 0 && model.length > 0 && year.length > 0 && cost.length > 0) {
+      if (this.state.formStyle.brand === 'fullField' &&
+         this.state.formStyle.model === 'fullField' &&
+         this.state.formStyle.year === 'fullField' &&
+         this.state.formStyle.cost === 'fullField') {
       return (
          <>
             <div className='myForm'>
                <form>
-                  <input name="brand" value={brand} placeholder='brand' onChange={this.updateData} />
-                  <input name="model" value={model} placeholder='model' onChange={this.updateData} />
-                  <input name="year" value={year} placeholder='year' onChange={this.updateData} />
-                  <input name="cost" value={cost} placeholder='cost' onChange={this.updateData} />
+                  <input name="brand" className={this.state.formStyle.brand} value={brand} placeholder='brand' onChange={this.updateData} />
+                  {this.state.formStyle.brand === 'emptyField' && <p>Название мдели должно быть длиннее 3</p>}
+
+                  <input name="model" className={this.state.formStyle.model} value={model} placeholder='model' onChange={this.updateData} />
+                  {this.state.formStyle.model === 'emptyField' && <p>Заполните поле</p>}
+
+                  <input name="year" className={this.state.formStyle.year} value={year} placeholder='year' onChange={this.updateData} />
+                  {this.state.formStyle.year === 'emptyField' && <p>Дата должна быть формата: '1488'</p>}
+
+                  <input name="cost" className={this.state.formStyle.cost}value={cost} placeholder='cost' onChange={this.updateData} />
+                  {this.state.formStyle.cost === 'emptyField' && <p>Введите корректное число</p>}
+
                </form>
                <button onClick={this.createClickForm}>Добавить</button>
             </div>  
@@ -72,12 +109,18 @@ class Form extends React.Component {
          return (
          <> 
             <div className='myForm'>
-                  {cost.length < 1 && <p>Все поля должны быть заполнены</p>}
                <form>
-                  <input name="brand" className={brand} value={brand} placeholder='brand' onChange={this.updateData} />
-                  <input name="model" value={model} placeholder='model' onChange={this.updateData} />
-                  <input name="year" value={year} placeholder='year' onChange={this.updateData} />
-                  <input name="cost" value={cost} placeholder='cost' onChange={this.updateData} />
+                  <input name="brand" className={this.state.formStyle.brand} value={brand} placeholder='brand' onChange={this.updateData} />
+                  {this.state.formStyle.brand === 'emptyField' && <p>Название мдели должно быть длиннее 3</p>}
+
+                  <input name="model" className={this.state.formStyle.model} value={model} placeholder='model' onChange={this.updateData} />
+                  {this.state.formStyle.model === 'emptyField' && <p>Заполните поле</p>}
+
+                  <input name="year" className={this.state.formStyle.year} value={year} placeholder='year' onChange={this.updateData} />
+                  {this.state.formStyle.year === 'emptyField' && <p>Дата должна быть формата: '1488'</p>}
+
+                  <input name="cost" className={this.state.formStyle.cost} value={cost} placeholder='cost' onChange={this.updateData} />
+                  {this.state.formStyle.cost === 'emptyField' && <p>Введите корректное число</p>}
                </form>
                   <button onClick={this.doAlertClickForm}>Добавить</button>
             </div>

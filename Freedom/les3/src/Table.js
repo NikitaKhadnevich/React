@@ -5,45 +5,37 @@ class Table extends React.Component {
 
    constructor(props) {
       super(props)
-      this.state = {
-         carObj: 
-            {  
-               Cbrand: this.props.brand,
-               Cmodel: this.props.model,
-               Cyear: this.props.year,
-               Ccost: this.props.cost
+            this.state = {
+         carObj:
+            {
+            number: this.props.number,
+            brand: this.props.brand,
+            model: this.props.model,
+            year: this.props.year,
+            cost: this.props.cost,
             },
-         carArr: [],
+            carArr: [],
       }
    }
 
-   static getDerivedStateFromProps(props, state) {
-      return({
-         carObj: 
-         {  
-            Cbrand: props.brand,
-            Cmodel: props.model,
-            Cyear: props.year,
-            Ccost: props.cost
-         },
-      })
+   componentDidUpdate(prevProps) {
+      if (prevProps.number !== this.props.number) {
+         let carArr = this.state.carArr;
+         let carObj = {
+            number: this.props.number,
+            brand: this.props.brand,
+            model: this.props.model,
+            year: this.props.year,
+            cost: this.props.cost,
+            }
+         carArr.push(carObj);
+         //  Не разобрался как правильно запушить в массив, в самом setState
+         this.setState({
+            carArr: carArr
+         })
+      }
    }
-
-   createAccum = () => {
-      const carObj = this.state.carObj;
-      const carArr = this.state.carArr;
-      carArr.push(carObj);
-      this.setState(
-         carArr
-         )
-   }
-   
-   createClickTable = () => {
-      this.createAccum()
-   }
-
-   //Сначала происходит рендер в результате чего появляется кнопка//
-   
+      
    render() {
       return (
          <>
@@ -55,22 +47,23 @@ class Table extends React.Component {
                         <th>Brand</th>
                         <th>Model</th>
                         <th>Year</th>
-                        <th>Cost</th>
+                        <th>Cost($)</th>
                      </tr>
                   </thead>
                   {this.state.carArr.map((item, index) => {
-                  return (<tbody>
+                  return (
+                  <tbody>
                      <tr>
-                        <td cla>{++index}</td>
-                        <td>{item.Cbrand}</td>
-                        <td>{item.Cmodel}</td>
-                        <td>{item.Cyear}</td>
-                        <td>{item.Ccost}</td>
+                        <td>{++index}</td>
+                        <td>{item.brand}</td>
+                        <td>{item.model}</td>
+                        <td>{item.year}</td>
+                        <td>{item.cost}</td>
                         <td id='delete' data-num={index}>X</td>
                      </tr>
-                  </tbody>)})}
+                  </tbody>
+               )})}
                </table>
-               <button onClick={this.createClickTable}>Update</button>    
             </div>    
          </>
       )
