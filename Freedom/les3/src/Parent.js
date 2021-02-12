@@ -8,7 +8,7 @@ class Parent extends React.Component {
       super(props)
       this.state = {
          data: {
-            Parentnumber: '0',
+            Parentnumber: '',
             Parentbrand: '',
             Parentmodel: '',
             Parentyear: '',
@@ -28,21 +28,17 @@ class Parent extends React.Component {
       }))
    }
 
-   updateAll = (arg, arg2) => {
-      return arg, arg2;
+   getRandomInt = () => {
+      return Math.random();
    }
-
-   createClickController = () => {
-      return this.updateAll()
-   }
+   // Не делал на Pure, ибо решил отработать для себя работу и передачу функций/методов
 
    render() {
-      const { data: { Parentbrand, Parentmodel, Parentyear, Parentcost, Parentnumber} } = this.state
+      const { data: { Parentbrand, Parentmodel, Parentyear, Parentcost } } = this.state
       return (
          <>
             <Table 
-               updateAll={this.updateAll}
-               number={Parentnumber}
+               number={this.getRandomInt()}
                brand={Parentbrand}
                model={Parentmodel}
                year={Parentyear}
@@ -51,8 +47,6 @@ class Parent extends React.Component {
             <Form 
                updateChild={this.updateChild}
             />
-            {/* <button onClick={this.createClickController}>Добавить</button> */}
-            {/* передали пропс на клик */}
          </>
       )
    }
