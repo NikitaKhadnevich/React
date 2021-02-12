@@ -1,21 +1,14 @@
 import React from 'react';
+import Child from '../Child';
 
 class PreChild extends React.Component {
-   constructor(props) {
-      super(props)
-      this.state = {
-      }
-   }
-
 
    render() {
       return (
          <>
-            <ul>
-
-               
-            </ul>
-            <p>dsfdfdsf</p>
+            <h5>
+               {this.props.children}
+            </h5>            
          </>
       )
    }

@@ -3,18 +3,16 @@ import PreChild from './PreChild/PreChild'
 
 
 class Child extends React.Component {
-   constructor(props) {
-      super(props)
-      this.state = {
-      }
-   }
-
-
 
    render() {
       return (
-         <>
-            <p>dsfdfdsf</p>
+         <>            
+            <h1>
+               {this.props.children}
+            </h1>
+            <PreChild>
+               Этот блок преРебенка
+            </PreChild>
          </>
       )
    }
