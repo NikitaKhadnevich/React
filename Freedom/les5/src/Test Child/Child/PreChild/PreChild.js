@@ -7,15 +7,12 @@ class PreChild extends React.Component {
       }
    }
 
-
    render() {
       return (
          <>
-            <ul>
-
-               
-            </ul>
-            <p>dsfdfdsf</p>
+            <li>
+               {this.props.text}   
+            </li>       
          </>
       )
    }

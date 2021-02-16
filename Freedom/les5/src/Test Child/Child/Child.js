@@ -1,7 +1,5 @@
-import React from 'react';
+import React, { Children } from 'react';
 import PreChild from './PreChild/PreChild'
-
-
 class Child extends React.Component {
    constructor(props) {
       super(props)
@@ -9,15 +7,17 @@ class Child extends React.Component {
       }
    }
 
-
-
    render() {
       return (
          <>
-            <p>dsfdfdsf</p>
+            <ul className='List'>
+               {this.props.children}
+            </ul>
          </>
       )
    }
 }
+
+Child.Item = PreChild
 
 export default Child
