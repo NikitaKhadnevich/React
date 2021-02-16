@@ -1,7 +1,6 @@
 import React from 'react';
 
 let catsLink = 'https://api.thecatapi.com/v1/breeds'
-
 class CatFetch extends React.Component {
    constructor(props) {
       super(props)
@@ -25,7 +24,7 @@ class CatFetch extends React.Component {
             hairless: item.hairless,
             child_friendly: item.child_friendly,
             dog_friendly: item.dog_friendly,
-            mark: 'В этом стейте есть Коты)'
+            mark: 'В этом стейте есть Кот)'
          }))
       });
       }
