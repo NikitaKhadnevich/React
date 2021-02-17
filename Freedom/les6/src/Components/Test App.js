@@ -1,9 +1,10 @@
 
 import './App.css';
 import React from 'react';
-import Home from './Components/Home/home';
-import Contacts from './Components/Contacts/contacts';
-import Info from './Components/Info/info';
+import Home from './Home/home';
+import Contacts from './Contacts/contacts';
+import Info from './Info/info';
+import NotFound from './NotFound/NotFound';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 
 
@@ -25,14 +26,13 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
             <Link to='/Info'>Info</Link>
           </nav>
           <Switch>
-            <Route path='/' exact component={Home} />
+            <Route exact path='/'  component={Home} />
             <Route path='/Contacts' component={Contacts} />
             <Route path='/Info' component={Info} />
+            <Route component={NotFound} />
           </Switch>
         </Router>
-        {/* <Home/>
-        <Contacts />
-        <Info /> */}
+      
       </div>
     )
 
