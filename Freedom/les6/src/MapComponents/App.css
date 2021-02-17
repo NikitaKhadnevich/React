@@ -1,0 +1,30 @@
+
+
+body {
+   background-color: rgb(141, 141, 141);
+}
+
+.Block {
+   display: flex;
+   flex-wrap: wrap;
+   width: 50%;
+   height: 65%;
+   margin: 0 auto;
+   margin-top: 100px;
+   border: solid 2px rgb(128, 128, 128);
+   justify-content: space-between;
+   
+
+}
+
+.Block > div {
+   width: 50px;
+   height: 50px;
+   margin: 2px;
+}
+
+.Block > div {
+   width: 50px;
+   height: 50px;
+   background-color: rgb(216, 216, 216);
+}
