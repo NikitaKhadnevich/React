@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import AppNav from './MapComponents/AppNav';
+import BasePage from './MapComponents/BasePage/BasePage';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppNav />
+    <BasePage />
   </React.StrictMode>,
   document.getElementById('root')
 );
