@@ -54,7 +54,7 @@ const Rone = () => {
             />
             </form>
          </div>
-         {props.render( {name, email, pass, secondName, birth, telNumb} )}
+         {/* {props.render( {name, email, pass, secondName, birth, telNumb} )} */}
       </>
    )
 }
