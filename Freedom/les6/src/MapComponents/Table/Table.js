@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 class Table extends React.Component {
@@ -9,10 +8,10 @@ class Table extends React.Component {
       }
    }
 
-      componentDidMount() {
+   componentDidMount() {
       const tableArr = [];
       while (tableArr.length < 195) {
-         tableArr.push(tableArr.length + ' block')
+         tableArr.push(tableArr.length)
       }
       this.setState({
          table: tableArr,
