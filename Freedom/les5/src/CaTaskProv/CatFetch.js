@@ -37,7 +37,7 @@ class CatFetch extends React.Component {
    render() {
       const { cat } = this.state;
       const { children } = this.props;
-      console.log(cat)
+      console.log(cat);
 
       return (
          Boolean(cat) && (children(cat))
