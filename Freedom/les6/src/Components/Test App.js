@@ -1,5 +1,5 @@
 
-import './App.css';
+// import './App.css';
 import React from 'react';
 import Home from './Home/home';
 import Contacts from './Contacts/contacts';
@@ -18,6 +18,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 
   render() {
     return(
+      <>
       <div>
         <Router>
           <nav>
@@ -32,8 +33,8 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
             <Route component={NotFound} />
           </Switch>
         </Router>
-      
       </div>
+      </>
     )
 
   }

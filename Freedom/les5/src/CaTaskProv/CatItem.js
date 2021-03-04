@@ -22,6 +22,7 @@ class CatItem extends React.Component {
    
    render() {
       const { cat } = this.props;
+      console.log('cat', cat)
       // Забираю пропсами из  Accum результат фетча  CaTask
       return Boolean(cat) && (
          <>  

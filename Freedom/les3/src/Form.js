@@ -35,7 +35,7 @@ class Form extends React.Component {
       const modelCost =
          value.length > 0 && value.replace(/[^0-9]/g, '').length == value.length ? 'fullField' : 'emptyField'
 
-      const checkBox = (name,value, field) => {
+      const checkBox = (name,value,field) => {
          this.setState(prevState => ({
             ...prevState,
             data: {
