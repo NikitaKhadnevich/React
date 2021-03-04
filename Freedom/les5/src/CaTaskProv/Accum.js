@@ -4,12 +4,7 @@ import CatItem from './CatItem'
 import './CatIndex.css';
 
 class Accum extends React.Component {
-   constructor(props) {
-      super(props)
-      this.state = {
-      }
-   }
-
+   deb
    render() {
       return (
       <>   
@@ -17,7 +12,8 @@ class Accum extends React.Component {
             <CatFetch>
                {cat => <CatItem cat={cat} />}
             </CatFetch>
-            {/* // Запускаю Провайдер и передаю пропсину CatItem// */}
+            {/* // Запускаю Провайдер и передаю пропсину CatItem. Тем самым говорю: "Вызови компонент(функцию по сути) CatItem с аргументом из childrenprops cat.// */
+            }
          </div>
       </>   
       );
