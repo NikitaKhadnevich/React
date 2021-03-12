@@ -1,36 +1,34 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Todo from './components/Todo/Todo;'
+import Form from './components/Form';
+import TodoIndex from './components/ToDo/TodoIndex'
+import { todo } from './ducks/todo';
 
 class App extends React.Component {
 
   render() {
-    const { counter, text } = this.props;
+    const { names, email, password } = this.props;
 
     return (
-      <div className='Todo'>
-        <Todo />
+      <div className='App'>
+        <div id='myForm'>
+          <form>
+            <Form />
+            <TodoIndex />
+          </form>
+        </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ counter, todo }) => {
+const mapStateToProps = ({ form, todo }) => {
   return {
-    counter: counter.counter,
-    text: todo.text,
+    todo: todo.todoInit,
+    names: form.names,
+    email: form.email,
+    password: form.password,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    changeGlobalStore: (data) => {
-      dispatch({
-        type: 'INCREMENT',
-        payload: data,
-      });
-    },
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);

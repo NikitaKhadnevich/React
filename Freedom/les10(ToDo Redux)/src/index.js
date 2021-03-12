@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { debugContextDevtool } from 'react-context-devtool';
-import App from './App';
+import './index.css'
 
+import App from './App';
 import store from './store';
 
 const container = document.getElementById('root');
