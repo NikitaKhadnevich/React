@@ -27,5 +27,7 @@ const  FetchCar = (props) => {
 
 export default FetchCar;
 
+///Вынести на отдельный компонент
+
 
 

@@ -12,7 +12,7 @@ const  RenderCar = (props) => {
       fetchData();
       });
 
-   console.log('arrCar', arrCar)   
+   console.log('arrCar', arrCar[0]?.name)   
 
    return (
       <>

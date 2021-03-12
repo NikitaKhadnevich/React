@@ -1,0 +1,194 @@
+* 
+{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 1rem;
+	background-color: black;
+ }
+ 
+
+h1 {
+	color: rgb(246, 255, 255);
+	text-align: center;
+	margin-top: 5%;
+	margin-bottom: 2%;
+}
+
+.App {
+	display: flex;
+	align-items: center;
+	align-self: center;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	min-width: 480px;
+	min-height: 50px;
+}
+
+.navigation > a{
+	min-width: 160px;
+}
+
+
+.Posts > p {
+	font-size: 2em;
+	color: rgb(246, 255, 255);
+	text-align: center;
+	margin-top: 5%;
+	margin-bottom: 2%;
+}
+
+.List{
+	width: 75%;
+	margin: 0 auto;
+	margin-top: 25px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+.List > div{
+	display: flex;
+	width: 100%;
+	text-decoration: none;
+	color: rgb(246, 255, 255);
+	// margin: auto;
+		margin: 7px;
+}
+
+.List > div > a{
+	width: 100%;
+	text-decoration: none;
+	color: rgb(246, 255, 255);
+	border: 1px solid rgba(246, 255, 255, 0.233);
+	border-radius: 5px;
+	padding: 3px;
+	text-align: center;
+}
+
+.homePage > p {
+	font-size: 1em;
+	color: rgba(246, 255, 255, 0.384);
+	text-align: center;
+}
+
+.RenderPost, .Renderfalse, .Rendertrue{
+	background-color: rgb(0, 0, 0);
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	margin-top: 50px;
+	border-radius: 5px;
+	box-shadow: inset 2px 2px 5px rgba(190, 193, 191, 0.5), 1px 1px 35px rgb(255, 255, 255);
+}
+
+.Rendertrue {
+	box-shadow: inset 2px 2px 5px rgba(190, 193, 191, 0.5), 1px 1px 35px rgb(76, 255, 180);
+}
+.Renderfalse {
+	box-shadow: inset 2px 2px 5px rgba(190, 193, 191, 0.5), 1px 1px 35px rgb(255, 105, 63);
+}
+
+
+.RenderPost > p , .Renderfalse > p , .Rendertrue > p {
+	color: rgb(246, 255, 255);
+	margin: 5	px;
+	padding: 3px
+}
+
+.RenderPost > div , .Renderfalse > div , .Rendertrue > div{
+	color: rgb(246, 255, 255);
+}
+
+.todoResult {
+	display: flex;
+	justify-content: left;
+}
+
+#falseTodo {
+	color: rgba(255, 0, 0, 0.719);
+	margin-left: 3px;
+}
+#trueTodo {
+	color: rgba(0, 255, 76, 0.719);
+	margin-left: 3px;
+}
+
+
+
+.navigation > a{
+	text-align: center;
+	width: 150px;
+	margin: auto;
+	text-decoration: none;
+	font-size: 2em;
+	color: rgb(246, 255, 255);
+}
+
+.blocks {
+margin: -200px;
+height: 100vh;
+padding-top: 300px;
+display: flex;
+align-items: center;
+position: relative;
+justify-content: center;
+background-color: black;
+}
+
+.block {
+--sz: 8vmin;
+--tX: 0;
+--animation: 700ms cubic-bezier(0.3, 0.5, 0.4, 0.9) infinite alternate-reverse;
+--hm: 4.5vmin;
+height: var(--sz);
+width: var(--sz);
+background-image: var(--bg);
+border-radius: 50%;
+transform: translateX(var(--tX));
+mix-blend-mode: lighten;
+transition: 0.4s;
+
+}
+ 
+.orange {
+--bg: linear-gradient(-50deg, #fbab7e 0%, #f7ce68 100%);
+margin-right: var(--hm);
+animation: attract-orange var(--animation);
+transition: 0.4s;
+}
+
+.blue {
+--bg: linear-gradient(50deg, #00bfd5 0%, #c5f5ff 100%);
+margin-left: var(--hm);
+animation: attract-blue var(--animation);
+transition: 0.4s;
+}
+
+@keyframes attract-orange {
+to {
+	transition: 0.4s;
+	transform: translateX(calc(var(--sz) + calc(var(--hm) / 4)));
+}
+}
+
+@keyframes attract-blue {
+to {
+	transition: 0.4s;
+	transform: translateX(calc(var(--sz) * -1 - calc(var(--hm) / 4)));
+}
+}
