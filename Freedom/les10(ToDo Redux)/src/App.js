@@ -26,8 +26,6 @@ const mapStateToProps = ({ form, todo }) => {
   return {
     todo: todo.todoInit,
     names: form.names,
-    email: form.email,
-    password: form.password,
   };
 };
 

@@ -1,0 +1,23 @@
+body {
+   background-color: rgba(123, 156, 255, 0.096);
+}
+
+.CivilizationsWrapper {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.navigation {
+   width: 500px;
+   display: flex;
+   justify-content: space-between;
+   margin: 0 auto;
+}
+
+.CivilizationsWrapper > div{
+   width: 300px;
+   display: flex;
+   justify-content: space-between;
+   padding: 10px;
+   
+}

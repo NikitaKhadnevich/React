@@ -24,7 +24,6 @@ body {
   background-color: rgba(255, 105, 180, 0.178);
   padding: 10px;
   border-radius: 10px;
-
 }
 
 form > input {
@@ -90,3 +89,34 @@ h4 {
   display: flex;
   justify-content: left;
 }
+
+.ChangeTodoForm {
+  padding-top: 30%;
+  position:fixed;
+  align-items:center;
+  justify-content:center;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background-color: rgba(0, 0, 0, 0.485);
+  background-attachment: blur;
+}
+
+.ChangeTodoForm > input{
+  display: block;
+  width: 380px;
+  height: 40px;
+  margin: 0 auto;
+  border: cornsilk solid 1px;
+  border-radius: 4px;
+  }
+
+  .likeCounter {
+    display: flex;
+    justify-content: left;
+  }
+
+  .likeCounter > p{
+    padding: 5px
+  }

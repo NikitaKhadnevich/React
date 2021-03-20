@@ -1,29 +1,11 @@
-import store from '../store';
-
-const ADD_TODO = 'ADD_TODO';
-const EDIT_TODO = 'EDIT_TODO';
-const DELETE_TODO = 'DELETE_TODO';
+import { NAMES } from './form'
+import { ADD_TODO, EDIT_TODO, DELETE_TODO, SHOW_TODOCHANGED, ADD_LIKE} from './todo'
 
 export const ACTION_ON_INPUT_NAME = (value) => {
-  const state = store.getState();
-
   return {
-    type: 'NAMES',
+    type: NAMES,
     payload: value,
-  };
-};
-
-export const ACTION_ON_INPUT_EMAIL = (value) => {
-  return {
-    type: 'EMAIL',
-    payload: value,
-  };
-};
-
-export const ACTION_ON_INPUT_PASSWORD = (value) => {
-  return {
-    type: 'PASSWORD',
-    payload: value,
+    //3 По сути позвращается объект с тайпом и пайлоад = дата из Компонента
   };
 };
 
@@ -34,6 +16,21 @@ export const ACTIONS_ADD_TODO = (value) => {
   };
 }
 
+export const ACTION_DELETE_TODO = (value) => {
+  return {
+    type: DELETE_TODO,
+    payload: value,
+  }
+}
+
+export const ACTION_SHOW_TODOCHANGED = (changed, dataset) => {
+  return {
+    type: SHOW_TODOCHANGED,
+    paychanged: changed,
+    paydata: dataset
+  } 
+}
+
 export const ACTION_EDIT_TODO = (value) => {
   return {
     type: EDIT_TODO,
@@ -41,9 +38,10 @@ export const ACTION_EDIT_TODO = (value) => {
   }
 }
 
-export const ACTION_DELETE_TODO = (value) => {
+export const ACTIONS_ADD_LIKE = (target, counter) => {
   return {
-    type: DELETE_TODO,
-    payload: value,
-  }
+    type: ADD_LIKE,
+    likeTarget: target,
+    likeCounter: counter
+  };
 }
