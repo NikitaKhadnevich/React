@@ -1,49 +1,36 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
-import { ACTION_GET_UNIT_Requested, ACTION_GET_SPAN_UNIT_STATUS } from '../../ducks/units/actions';
-import { connect } from 'react-redux';
-// import { todosSelector } from './ducks/todos/selectors';
-
-export const UnitSelector = (state) => state.units.dataUnit.units;
-export const UnitSpan = (state) => state.units.span
-
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import { ACTION_GET_UNIT_Requested } from '../../ducks/units/actions';
+import { Unitsdata } from '../../ducks/units/selectors'
 
 const Units = (props) => {
 
-  const dataUnit = useSelector(UnitSelector);
-  const statusSpan = useSelector(UnitSpan);
+  const baseUrl = 'https://age-of-empires-2-api.herokuapp.com/api/v1/'
+  const pathUrl = 'units'
+  const dataUnit = useSelector(Unitsdata);
   const dispatches = useDispatch();
+ 
+  const getFetch = ( url, path, arr) => {
+    if ( Boolean(arr) == false) {
+      dispatches(ACTION_GET_UNIT_Requested(`${url}/${path}`));
+    } else null
+  }
 
   useEffect(() => {
-   dispatches(ACTION_GET_UNIT_Requested('https://age-of-empires-2-api.herokuapp.com/api/v1/units'));
+    getFetch(baseUrl, pathUrl, dataUnit)
   }, []);
-  
-  const changeSpan = (e) => {
-   e.preventDefault()
-   const { onClickCHANGEunit, statusSpan } = props
-   onClickCHANGEunit(!statusSpan)
- }
+
+  console.log(`props.match`, props.match)
 
   return (
-    <>
+    <>  
     <div className='UnitWrapper'>
-      {dataUnit && dataUnit.map((item, index) => {
+      {dataUnit && dataUnit.map((item, i) => {
         return (
-          <>
-            <div className={index+'Item'}>
-              <span key={item.id} className='showBtn' onClick={changeSpan}>
-                  <p key={item.id+'prometey'}>{item.name}</p>
-              {statusSpan ? '-' : '+'}
-              </span>
-              {statusSpan && (<div className='Items' key={item.id+'terra'}>
-                  <p key={item.id+'gera'}>Имя: {item.name}</p>
-                  <p key={item.id+'tifon'}>Особенность юнита: {item.description}</p>
-                  <p key={item.id+'zeus'}>Стоимость: Золото:{item.cost.Wood}, Дерево:{item.cost.Gold}</p>
-                  <a href={item.created_in}>Обитель создания</a>
-                </div>)}
+            <div key={Math.random()} className='UnitItem'>
+                <Link to={`${props.match.url}/${item.name}`}>{item.name}</Link>
             </div>
-          </>
           )
       })
     }    
@@ -52,12 +39,4 @@ const Units = (props) => {
   )
 };
 
-const mapStateToProps = ({ units }) => ({
-   statusSpan: units.span, 
-});
-
-const mapDispatchToProps = (dispatch) => ({
-   onClickCHANGEunit: (statusSpan) => dispatch(ACTION_GET_SPAN_UNIT_STATUS(statusSpan)),
-});
-
-export default  connect(mapStateToProps,mapDispatchToProps)(Units)
+export default Units

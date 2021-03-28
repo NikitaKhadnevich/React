@@ -1,10 +1,12 @@
 import React from 'react'
+import About from '../About/About'
 
 const Home = () => {
 
    return (
-      <><div className='homePage'>
-         <p> Вы на домашней странице</p>
+      <>
+      <div className='homePage'>
+         <About />
       </div>
          
       </>

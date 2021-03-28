@@ -31,7 +31,7 @@ export const getPostsFailed = (error) => (
 
 // Создайем Мидлварку
 export const ACTION_GET_POSTS = (path) => async (dispatch) => {
-  try {
+   try {
       dispatch(getPostsRequested())
 
       // const res = await API.get(path)
@@ -43,7 +43,7 @@ export const ACTION_GET_POSTS = (path) => async (dispatch) => {
    } catch (error) { 
       console.dir('Ошибка сервера', error)
       dispatch(getPostsFailed(error));
-  }
+   }
 }; 
 
 export const posts = (state = initialPostsState, action) => {
