@@ -9,6 +9,8 @@ import {
   ACTION_GET_CIVIL_DETAIL_FAILED
 } from './actions';
 
+const error = "Ошибка связи :("
+
 const proxy = 'https://cors-anywhere.herokuapp.com/'
 
 export function* getTodosSaga({ payload }) {
@@ -24,8 +26,9 @@ export function* getTodosSaga({ payload }) {
     const res = yield data.json();
 
     yield put(ACTION_GET_CIVIL_Succeed(res));
-  } catch (e) {
-    yield put(ACTION_GET_CIVIL_FAILED(e));
+  } catch (error) {
+    error = new Error("Ошибка связи :(")
+    yield put(ACTION_GET_CIVIL_FAILED(error.message));
   }
 }
 
@@ -40,8 +43,9 @@ export function* getDetailSaga ( {payloadDetail} ) {
     );
     const resDetail = yield dataDetail.json();
     yield put(ACTION_GET_CIVIL_DETAIL_Succeed(resDetail))
-  } catch (e) {
-    yield put(ACTION_GET_CIVIL_DETAIL_FAILED(e))
+  } catch (error) {
+    error = new Error("Ошибка связи :(")
+    yield put(ACTION_GET_CIVIL_DETAIL_FAILED(error.message))
   }
 }
 

@@ -37,8 +37,6 @@ export const ACTION_GET_ROUTE_CIVIL_MENU = (path) => ({
   path,
 });
 
-
-
 export const ACTION_GET_CIVIL_REQUESTED_DETAIL = (url) => {
   console.log('action requested');
   return {

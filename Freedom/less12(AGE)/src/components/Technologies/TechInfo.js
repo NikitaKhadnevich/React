@@ -5,11 +5,10 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import { ACTION_GET_TECH_Requested, ACTION_GET_TECH_REQUESTED_DETAIL } from '../../ducks/technologies/actions';
 import { TechData, TechDataDetail, TechError, TechisFetching } from '../../ducks/technologies/selectors'
 import TechDetailInfo from './TechDetailInfo'
+import  { baseUrl, Urlpath } from '../Api/Api'
 
 const TechInfo = (props) => {
-   const baseUrl = 'https://age-of-empires-2-api.herokuapp.com/api/v1/'
-   const pathUrl = 'technologies'
-
+   const { technologies } = Urlpath
    const data  = useSelector(TechData)
    const dispatches = useDispatch()
    const params = props.match.params.id
@@ -21,7 +20,7 @@ const TechInfo = (props) => {
       }
 
    useEffect(() => {
-      getFetch(baseUrl, pathUrl, data)
+      getFetch(baseUrl, technologies, data)
    }, []);
 
    const handleLocation = () => {

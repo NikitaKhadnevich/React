@@ -15,7 +15,6 @@ const About = () => {
 }
 export default About
 
-
 export const Errors = () => {
    const e  = useSelector(getError)
    return (

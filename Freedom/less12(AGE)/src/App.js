@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import Home from './components/Home/Home';
+
 import Civil from './components/Civil/Civil';
 import CivInfo from './components/Civil/CivInfo';
 
@@ -10,11 +11,10 @@ import UnitSkill from './components/Units/UnitSkil';
 import Structure from './components/Structure/Structure';
 import StructureInfo from './components/Structure/StructureInfo';
 
-import  Technologies from './components/Technologies/Technologies'
+import Technologies from './components/Technologies/Technologies'
 import TechInfo from './components/Technologies/TechInfo'
 
 const App = (props) => {
-
   return (
     <>
       <Router>
@@ -32,7 +32,6 @@ const App = (props) => {
               <Route exact path='/civilizations' component={Civil} />
               <Route path='/civilizations/:id/' component={CivInfo} />
   
-
               <Route exact path='/units' component={Units} />
               <Route path='/units/:id' component={UnitSkill} />
 
@@ -41,9 +40,9 @@ const App = (props) => {
 
               <Route exact path='/technologies' component={Technologies} />
               <Route exact path='/technologies/:id/' component={TechInfo} />
-            </Switch>
-          </div>
-        </Router>
+          </Switch>
+        </div>
+      </Router>
     </>
   );
 }

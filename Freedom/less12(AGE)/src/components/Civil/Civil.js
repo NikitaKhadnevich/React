@@ -5,6 +5,7 @@ import { ACTION_GET_CIVIL_Requested } from '../../ducks/civil/actions';
 import { Civildata } from '../../ducks/civil/selectors'
 import  { baseUrl, Urlpath } from '../Api/Api'
 
+
 const Civil = (props) => {
   const { civilizations } = Urlpath
   const data = useSelector(Civildata);
@@ -27,10 +28,10 @@ const Civil = (props) => {
           return (
             <div id={data.id} key={Math.random()} className='CivilsItem'>
               <Link to={`${props.match.url}/${item.name}`}>{item.name}</Link>
-            </div>    
+            </div>   
             )
-        })
-      }
+          })
+        }
       </div>
     </>
   )

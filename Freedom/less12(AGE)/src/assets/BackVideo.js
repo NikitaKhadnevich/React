@@ -3,7 +3,7 @@ import App from '../App'
 import back from './back.mp4'
 import classes from './BackgroundVideo.module.css';
 
-const BackgroundVideo = () => {
+const AppWithBackgroundVideo = () => {
    const videoSource = back
    return (
       <div className={classes.Container} >
@@ -19,4 +19,4 @@ const BackgroundVideo = () => {
    )
 }
 
-export default BackgroundVideo
+export default AppWithBackgroundVideo

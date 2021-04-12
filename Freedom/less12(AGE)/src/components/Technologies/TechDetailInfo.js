@@ -23,7 +23,6 @@ const TechDetailInfo = (props) => {
    return (
       <>
          {(dataDetail.id && !fetchStatus) ? 
-         <>
             <ul id='Skils' key={Math.random()}>
                <button key={Math.random()} id='CloseDetail' onClick={handleLocation}>X</button>
                <ul key={Math.random()}>
@@ -36,16 +35,12 @@ const TechDetailInfo = (props) => {
                   <li key={Math.random()}>Единицы здоровья: {dataDetail?.hit_points}</li>
                </ul>
             </ul>
-         </>
-         :  
-         <> 
+         :  (!fetchStatus) ?
             <div id='Skils'>
                <Errors />
                <button key={Math.random()} id='CloseDetail' onClick={handleLocation}>X</button>
-            </div>
-         </>
-         
-         }
+            </div>         
+         : null }
       </>
    )
 }

@@ -3,14 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
 import { ACTION_GET_UNIT_Requested, ACTION_GET_UNIT_DETAIL_Requested} from '../../ducks/units/actions';
-import { Unitsdata, UnitsdataUnitDetail } from '../../ducks/units/selectors'
+import { Unitsdata } from '../../ducks/units/selectors'
 import UnitDetailInfo from '../Units/UnitDetailInfo'
-
+import  { baseUrl, Urlpath } from '../Api/Api'
 
 const UnitSkill = (props) => {
-
-   const baseUrl = 'https://age-of-empires-2-api.herokuapp.com/api/v1/'
-   const pathUrl = 'units'
+   const { units } = Urlpath
    const params = props.match.params.id
 
    const dataUnit  = useSelector(Unitsdata)
@@ -22,7 +20,7 @@ const UnitSkill = (props) => {
       } else null
       }
    useEffect(() => {
-      getFetch(baseUrl, pathUrl, dataUnit)
+      getFetch(baseUrl, units, dataUnit)
    }, []);
 
    const handleLocation = () => {
@@ -49,7 +47,7 @@ const UnitSkill = (props) => {
                      <p>Время постоки: {item.build_time}</p>
                      <p>Тип: {item.age}</p>
                      <p>Отличительная особенность: {item.description}</p>
-                     <p>Стоимость Юнита: {item.cost.Wood} древесины, {item.cost.Gold} золота</p>
+                     <p>Стоимость Юнита: {`${item.cost?.Wood} древесины`} , {`${item.cost?.Gold} золота`}</p>
                      <div key={Math.random()} className='UnitLinkItem'>
                         <Link to={`${props.match.url}/building`} id={item.id} onClick={handleclick}data-path='unicUnit'>Мануфактура Юнита {item.name}</Link>
                      </div>
