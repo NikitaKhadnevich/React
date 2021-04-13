@@ -33,8 +33,8 @@ const UnitDetailInfo = (props) => {
                      )
                   })
                }
-            </ul> :
-         (dataUnitDetail.id && !fetchStatus) ?
+            </ul>
+         : (dataUnitDetail.id && !fetchStatus) ?
             <ul id='Skils'>
                <button id='CloseDetail' onClick={handleLocation}>X</button>
                <ul>
@@ -46,11 +46,12 @@ const UnitDetailInfo = (props) => {
                   <li>Единицы здоровья: {dataUnitDetail.hit_points}</li>
                </ul>
             </ul>   
-      :  <ul id='Skils'>
+         : (!fetchStatus) ?
+         <ul id='Skils'>
             <button id='CloseDetail' onClick={handleLocation}>X</button>
             <li>У цивилизации нет уникального юнита</li>
          </ul>
-         }
+         : null }
       </>
    )
 }

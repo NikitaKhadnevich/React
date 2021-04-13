@@ -3,11 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import { ACTION_GET_UNIT_Requested } from '../../ducks/units/actions';
 import { Unitsdata } from '../../ducks/units/selectors'
+import  { baseUrl, Urlpath } from '../Api/Api'
 
 const Units = (props) => {
-
-  const baseUrl = 'https://age-of-empires-2-api.herokuapp.com/api/v1/'
-  const pathUrl = 'units'
+  const { units } = Urlpath
   const dataUnit = useSelector(Unitsdata);
   const dispatches = useDispatch();
  
@@ -18,7 +17,7 @@ const Units = (props) => {
   }
 
   useEffect(() => {
-    getFetch(baseUrl, pathUrl, dataUnit)
+    getFetch(baseUrl, units, dataUnit)
   }, []);
 
   console.log(`props.match`, props.match)

@@ -3,13 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import { ACTION_GET_STRU_Requested } from '../../ducks/structures/actions';
 import { StructuresData } from '../../ducks/structures/selectors'
-
+import  { baseUrl, Urlpath } from '../Api/Api'
 
 
 const StructureInfo = (props) => {
-   const baseUrl ='https://age-of-empires-2-api.herokuapp.com/api/v1/'
-   const pathUrl = 'structures'
-
+   const { structures } = Urlpath
    const dataStru = useSelector(StructuresData)
    const  dispatches = useDispatch()
 
@@ -20,7 +18,7 @@ const StructureInfo = (props) => {
    }
   
    useEffect(() => {
-      getFetch(baseUrl, pathUrl, dataStru)
+      getFetch(baseUrl, structures, dataStru)
    }, []);
 
    const handleLocation = () => {

@@ -4,7 +4,9 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import { ACTION_GET_CIVIL_Requested, ACTION_GET_CIVIL_REQUESTED_DETAIL , ACTION_GET_ROUTE_CIVIL_MENU } from '../../ducks/civil/actions';
 import { Civildata , CivildataDetail } from '../../ducks/civil/selectors'
 import CivDetailInfo from './CivDetailInfo'
+import CivilInfoStupid from './CivilStupid'
 import  { baseUrl, Urlpath } from '../Api/Api'
+import { random } from './CivilStupid'
 
 const CivInfo = (props) => {
    const { civilizations } = Urlpath
@@ -24,6 +26,7 @@ const CivInfo = (props) => {
 
    const handleclick = (e) => {
          const targetPath = e.target.dataset.path
+         console.log(`e.target.id`, e.target.id)
          dispatches(ACTION_GET_ROUTE_CIVIL_MENU(targetPath));
          targetPath == 'unique_unit'  ?
          dispatches(ACTION_GET_CIVIL_REQUESTED_DETAIL(data[e.target.id-1].unique_unit.join())) :
@@ -44,30 +47,23 @@ const CivInfo = (props) => {
    }
    
    const params = props.match.params.id
+   const urlCiv = props.match.url
 
    return ( 
    <>
-      <p id='goback' onClick={handleLocation}>Вернуться назад</p>
       {data && civilDetail && data.map((item, i) => {
          if (params === item.name) {
             return (
                <Router>
-               <div className='Items' key={item.id+'terra'}>
-                  <p key={item.id+'gera'}>Имя: {item.name}</p>
-                  <p key={item.id+'tifon'}>Класс война: {item.expansion}</p>
-                  <p key={item.id+'zeus'}>Тип Армии: {item.army_type}</p>
-                  <p key={item.id+'artemida'}>Командный бонус: {item.team_bonus}</p>
-
-                  <div key={Math.random()} className='CivilsItem'>
-                     <Link to={`${props.match.url}/unique_unit`} id={item.id} onClick={handleclick} data-path='unique_unit'>Уникальный юнит {item.name}</Link>
-                  </div>
-                  <div key={Math.random()} className='CivilsItem2'>
-                     <Link to={`${props.match.url}/unique_tech`} id={item.id} onClick={handleclick} data-path='unique_tech'>Уникальная технология {item.name}</Link>
+                  <a key={'terra'} id='goback' onClick={handleLocation}>Вернуться назад</a>
+                  <div className='Items' key={item.id+'terra'}>
+                     <CivilInfoStupid > 
+                        {item}{urlCiv}{handleclick}
+                     </CivilInfoStupid>
                   </div>
                   <Switch>
-                     <Route path={`${props.match.url}/:id`} component={CivDetailInfo} />
+                     <Route path={`${urlCiv}/:id`} component={CivDetailInfo} />
                   </Switch>
-               </div>
                </Router>
             )
          } 
