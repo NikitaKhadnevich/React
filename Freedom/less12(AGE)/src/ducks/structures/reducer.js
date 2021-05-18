@@ -16,7 +16,6 @@ export const initialStruState = {
 };
 
 export const structures = (state = initialStruState, action) => {
-  console.log('reducer');
   switch (action.type) {
     case GET_STRU_REQUESTED:
       return {
