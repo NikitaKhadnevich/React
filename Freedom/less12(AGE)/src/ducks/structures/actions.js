@@ -9,7 +9,7 @@ export const GET_STRU_DETAIL_FAILED = 'GET_STRU_DETAIL_FAILED';
 
 
 export const ACTION_GET_STRU_Requested = (url) => {
-  console.log('action requested');
+
   return {
     type: GET_STRU_REQUESTED,
     payload: url,
@@ -17,7 +17,7 @@ export const ACTION_GET_STRU_Requested = (url) => {
   };
 };
 export const ACTION_GET_STRU_Succeed = (response) => {
-  console.log('action succeed');
+
   return {
     type: GET_STRU_SUCCEED,
     response,
@@ -37,7 +37,7 @@ export const ACTION_GET_STRU_DETAIL_Requested = (url) => {
   }
 }
 export const ACTION_GET_STRU_DETAIL_Succeed = (response) => {
-  console.log('action succeed');
+
   return {
     type: GET_STRU_DETAIL_SUCCEED,
     response,
@@ -45,7 +45,7 @@ export const ACTION_GET_STRU_DETAIL_Succeed = (response) => {
   };
 };
 export const ACTION_GET_STRU_DETAIL_FAILED = (response) => {
-  console.log('action succeed');
+
   return {
     type: GET_STRU_DETAIL_FAILED,
     error,
