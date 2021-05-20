@@ -1,13 +1,12 @@
 import React from 'react'
+import HomePage from '../SmallElems/SmallElems'
 
 const Home = () => {
 
    return (
-      <><div className='homePage'>
-         <p> Вы на домашней странице</p>
+      <div className='homePage'>
+         <HomePage />
       </div>
-         
-      </>
    )
 }
 
