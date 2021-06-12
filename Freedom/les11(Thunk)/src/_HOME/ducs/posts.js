@@ -3,7 +3,6 @@ export const GET_POSTS_FAILED = 'GET_POSTS_FAILED';
 export const GET_POSTS_REQUESTED = 'GET_POSTS_REQUESTED';
 import { API } from '../api/RestApi'
 
-
 //Задаем Инит стэйт
 export const initialPostsState = {
    isFetching: false,
@@ -48,6 +47,11 @@ export const ACTION_GET_POSTS = (path) => async (dispatch) => {
 
 export const posts = (state = initialPostsState, action) => {
    switch (action.type) {
+      case GET_POSTS_REQUESTED:
+         return {
+         ...state,
+         isFetching: true,
+         };
       case GET_POSTS_SUCCEED:
          return {
          ...state,
@@ -57,13 +61,8 @@ export const posts = (state = initialPostsState, action) => {
       case GET_POSTS_FAILED:
          return {
          ...state,
-         error: 'Чэхи и Паляки поломали сервер',
+         error: 'Чэхи и Паляки поломали сервер c постами',
          isFetching: false,
-         };
-      case GET_POSTS_REQUESTED:
-         return {
-         ...state,
-         isFetching: true,
          };
       default:
          return { ...state };

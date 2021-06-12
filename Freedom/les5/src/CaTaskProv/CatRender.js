@@ -22,7 +22,7 @@ class CatRender extends React.PureComponent {
    //Если у нас стэйт open равен прошлому стэйту, то в нашем случе спан не открывался и отрисовывать не за чем блок с котом. А если же они не равны друг другу - то будь добр отрисуй, ибо произошло изменение в стэйте объекта!!! 
 
    render() {
-      const { id, name, image,  temperament, wikipedia_url, social_needs, child_friendly, hairless, dog_friendly} = this.props
+      const { id, name, image,  temperament, wikipedia_url, social_needs, child_friendly, hairless, dog_friendly} = this.props // Тут мы уже забираем элементы массива
       console.log('RENDER', {name})
       const { open } = this.state
       return (

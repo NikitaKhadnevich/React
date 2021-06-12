@@ -11,9 +11,8 @@ export default class App extends Component {
          <>
             <Table>
                {table => <TableRender table={table} />}
-            </Table>
-
-         </>
+            </Table> 
+         </> //3. Тут открываем провайдер и пулим его в дочерний элемент
       )
    }
 }

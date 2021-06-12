@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 class SpinnerHome extends React.Component {
 
   get fetchingState() {
-    const { isPostsFetching} = this.props;
+    const { isPostsFetching, isTodosFetching } = this.props;
     // Этот гет служит для нас своеобразным хранилищем - в сонст пропс может быть уйма стэйтов спинера разных компонентов,
-    return isPostsFetching ;
+    return isPostsFetching || isTodosFetching;
     // в ретурн же прописывается через || isFetching
   } 
 
@@ -18,8 +18,9 @@ class SpinnerHome extends React.Component {
   }
 }
 
-export const mapStateToProps = ({ posts }) => ({
+export const mapStateToProps = ({ posts, todos }) => ({
   isPostsFetching: posts.isFetching,
+  isTodosFetching: todos.isFetching,
   //Тут будут прелоады с других компонентов
   //isMusicFetching: music.isFetching
 });

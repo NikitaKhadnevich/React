@@ -15,15 +15,15 @@ class Table extends React.Component {
       }
       this.setState({
          table: tableArr,
-      })
+      }) // 1. Тут создается массив
    }
 
    render() {
       const { table } = this.state;
       const { children } = this.props;
       return (
-         (children(table))
-      )
+         (children(table)) // 2. Тут мы передаем через чилдрены сам массив
+      ) // 
    }
 }
 

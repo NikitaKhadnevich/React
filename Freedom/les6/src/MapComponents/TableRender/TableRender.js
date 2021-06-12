@@ -9,7 +9,7 @@ export default class TableRender extends Component {
    }
 
    render() {
-      const { table } = this.props
+      const { table } = this.props //4. тут принимаем этот массив
       return (
          <>
          <div className='Block'>
@@ -21,8 +21,8 @@ export default class TableRender extends Component {
                </li>
             )})
             }
-         </div>
-         </>
+         </div> 
+         </> // 5. А тут мы уже отрисовываем его в верстку
       )
    }
 }

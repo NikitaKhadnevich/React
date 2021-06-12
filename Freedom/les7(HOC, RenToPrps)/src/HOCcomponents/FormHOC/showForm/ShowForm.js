@@ -6,8 +6,7 @@ import { useState } from 'react'
 const ShowForm = ( {data} ) => {
    const parseData = (data) => {
       return 'data rend'
-   }
-
+   } // 1. Тут по сути и лежит наша дата
 
    const [name, setName] = useState(data.name)
    const [email, setEmail] = useState(data.email)
@@ -38,4 +37,4 @@ const ShowForm = ( {data} ) => {
    )
 }
 
-export default RoneHOC(ShowForm)
+export default RoneHOC(ShowForm) // Похоже на рендер ту пропс

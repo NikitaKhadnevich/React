@@ -35,6 +35,16 @@ class Table extends React.Component {
          })
       }
    }
+
+   handleDelete(e) {
+      if (e.target.id) {
+      console.log(e.target.id)
+      } else {
+         console.log(`Not Target`)
+      }
+   }
+   
+
       
    render() {
       return (
@@ -53,7 +63,7 @@ class Table extends React.Component {
                   {this.state.carArr.map((item, index) => {
                   return (
                   <tbody>
-                     <tr>
+                     <tr onClick={this.handleDelete}>
                         <td>{++index}</td>
                         <td>{item.brand}</td>
                         <td>{item.model}</td>

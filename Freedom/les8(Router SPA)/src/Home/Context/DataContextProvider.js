@@ -11,7 +11,7 @@ const DataContextProvider = ( {children} ) => {
       }
 
    return   <DataContext.Provider value={{testCar}}>
-            <FetchCar upState={upState} />
+               <FetchCar upState={upState} />
                {children}
             </DataContext.Provider>
    }
