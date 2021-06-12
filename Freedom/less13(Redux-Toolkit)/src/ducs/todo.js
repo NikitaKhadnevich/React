@@ -14,8 +14,7 @@ const todoReducer = createSlice(
          state.data.push(action.payload);
          state.data.reverse()
       },
-      TEST_TODO: (state, action) => {
-         state.test[action.payload] = action.payload
+      TEST_TODO: (state, action) => { state.test[action.payload] = action.payload
       }
    }
 }

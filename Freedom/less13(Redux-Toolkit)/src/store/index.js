@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import rootReducer from './rootreducer'
+import rootReducer from './rootreducer' // Импортим рутовый редьюсер
 
-const middlewares = [];
+const middlewares = []; // И мидлварки
 
 export default configureStore( {
    reducer: rootReducer,
-   middlewaressss: [...middlewares],
+   middlewaressss: [...middlewares], // Кофигурим это все
 })
