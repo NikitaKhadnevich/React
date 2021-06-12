@@ -16,7 +16,7 @@ class Parent extends React.Component {
          },
       }
    }
-   updateChild = (brand, model, year, cost) => {
+   updateChild = (brand, model, year, cost) => { // 1. Создаю функцию колбэк
       this.setState(prevState => ({
          ...prevState,
          data: {
@@ -45,7 +45,7 @@ class Parent extends React.Component {
                cost={Parentcost}
             />
             <Form 
-               updateChild={this.updateChild}
+               updateChild={this.updateChild} // 2. Передаю колбэк ребенку
             />
          </>
       )

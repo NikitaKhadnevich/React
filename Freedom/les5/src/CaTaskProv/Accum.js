@@ -4,7 +4,6 @@ import CatItem from './CatItem'
 import './CatIndex.css';
 
 class Accum extends React.Component {
-   deb
    render() {
       return (
       <>   
@@ -21,3 +20,5 @@ class Accum extends React.Component {
 }
 
 export default Accum
+
+//** Этот блок служит аккумуляторм для фетчового запроса и проводником для передачи на отрисовку в дочерний объект БЕЗ сохранения в стэйт */

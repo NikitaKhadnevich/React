@@ -29,7 +29,7 @@ const ShowForm = (props) => {
          <input type="text" placeholder="Enter Email" name="email" onChange={handleEmail}/>
          <input type="passwod" placeholder="Enter Password" name="pass" onChange={handlePass}/>
          {props.render( {name, email, pass} )}
-      </>
+      </> //  Именно в этом участке кода происходит магия - передача пропсов с мутирующий элемент
    )
 }
 

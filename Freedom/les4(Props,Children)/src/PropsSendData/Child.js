@@ -8,8 +8,8 @@ const Child = (props) => {
       <div className='Child'>
          <h4>Все о Ребенке</h4>
          <p> Возраст этого пропса {props.age} </p>
-      <PreChild {...props} />
-      </div>
+      <PreChild {...props} /> 
+      </div> // тут я предаю дальше в "Проребенка"
    )
 }
 

@@ -3,13 +3,12 @@ import { connect } from 'react-redux';
 
 
 const TodoRender = (props) => {
-
-   const { getData, posts, error, fetch } = props;
-
+  const { getData, posts, errorTodo, fetchTodo } = props;
+  const propsHash = props.match.params.id
   return (
     <>
-    {fetch.map((item, index) => {
-      if (props.match.params.id == item.id) {
+    {fetchTodo.map((item, index) => {
+      if (propsHash == item.id) {
         return (
           <div className={`Render${String(item.completed)}`} key={item.id}>
               <p>Номер Задания: {item.id}</p>
@@ -21,6 +20,8 @@ const TodoRender = (props) => {
               </div>
           </div>
           )
+        } else {
+          <h4>Ошибка в запросе :(</h4>
         }
       })
     }    
@@ -28,9 +29,8 @@ const TodoRender = (props) => {
   )
 }
 
-export const mapStateToProps = ({ posts }) => ({
-   fetch: posts.Arrdata,
-   error: posts.error
+export const mapStateToProps = ({ todos }) => ({
+   fetchTodo: todos.Arrdata,
  });
 
 

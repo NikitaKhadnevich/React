@@ -12,8 +12,8 @@ function Parent() {
       <div className='ParentBlock'>
          <h3>Все о Родителе</h3>
          <p> Текст этого пропса {parentdata.post}</p>
-         <Child {...parentdata} />
-      </div>
+         <Child {...parentdata} /> 
+      </div> // Тут я отдаю пропсы спредом в ребенка
    )
 }
 

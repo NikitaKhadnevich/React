@@ -7,7 +7,7 @@ const PreChild = ( {name} ) => {
       <div className='PreChild'>
          <h5>Все о ПреРебенке</h5>
          <p>Имя этого пропса {name}</p>
-      </div>
+      </div> //  А тут забираю
    )
 }
 

@@ -18,6 +18,21 @@ class Form extends React.Component {
       }
    };
 
+
+   checkBox = (name,value,field) => {
+      this.setState(prevState => ({
+         ...prevState,
+         data: {
+            ...prevState.data,
+            [name]: value
+         },
+         formStyle: {
+            ...prevState.formStyle,
+            [name]: field,
+         }
+      }))
+   }
+
    updateData = (event) => {
       const { name, value } = event.target;
       const brandAlert = 
@@ -35,31 +50,17 @@ class Form extends React.Component {
       const modelCost =
          value.length > 0 && value.replace(/[^0-9]/g, '').length == value.length ? 'fullField' : 'emptyField'
 
-      const checkBox = (name,value,field) => {
-         this.setState(prevState => ({
-            ...prevState,
-            data: {
-               ...prevState.data,
-               [name]: value
-            },
-            formStyle: {
-               ...prevState.formStyle,
-               [name]: field,
-            }
-         }))
-      }
-      
       if (name === 'brand') {
-         checkBox(event.target.name, event.target.value, brandAlert)
+         this.checkBox(event.target.name, event.target.value, brandAlert)
       }
       if (name === 'model') {
-         checkBox(event.target.name, event.target.value, modelAlert)
+         this.checkBox(event.target.name, event.target.value, modelAlert)
       }
       if (name === 'year') {
-         checkBox(event.target.name, event.target.value, modelYear)
+         this.checkBox(event.target.name, event.target.value, modelYear)
       }
       if (name === 'cost') {
-         checkBox(event.target.name, event.target.value, modelCost)
+         this.checkBox(event.target.name, event.target.value, modelCost)
       }
    }
 
@@ -70,7 +71,7 @@ class Form extends React.Component {
 
    createClickForm = () => {
       const { data: {brand, model, year, cost } } = this.state;
-         this.props.updateChild(brand, model, year, cost)
+         this.props.updateChild(brand, model, year, cost) // Вызываю функ-колбэк родителя для передачи стэйта
          this.letClear()
    }
 

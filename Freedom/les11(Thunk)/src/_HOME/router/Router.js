@@ -8,14 +8,17 @@ import PostsRender from '../components/PostsRender/PostsRender'
 import TodoRender from '../components/TodoRender/TodoRender'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import { getDataPosts } from '../components/Test/index'
-import { ACTION_GET_POSTSMIDL } from '../middlewares/actions'
-
+import { ACTION_GET_POSTSMIDL, ACTION_GET_TODOSMIDL } from '../middlewares/actions'
 
 function RouterData(props) {
 
    const getDataPosts = (e) => {
-      const { getData } = props
-      getData(e.target.dataset.path)
+      const { getPost } = props
+      getPost(e.target.dataset.path) //1. Передаем в пропсы наш path (/posts)
+   }
+   const getDataTodos = (e) => {
+      const { getTodos } = props
+      getTodos(e.target.dataset.path) 
    }
 
    return (
@@ -26,9 +29,8 @@ function RouterData(props) {
                <div className='navigation'>
                <Link to='/'>Home</Link>
                <Link to='/posts' data-path='/posts' onClick={getDataPosts}>Статьи</Link>
-
-               <Link to='/todos'data-path='/todos' onClick={getDataPosts}>Задания</Link>
-                </div>
+               <Link to='/todos'data-path='/todos' onClick={getDataTodos}>Задания</Link>
+               </div>
                <Switch> 
                   <Route exact path='/' component={Home} />
                   <Route exact path='/posts' component={Test} />
@@ -42,15 +44,20 @@ function RouterData(props) {
    )
 }
 
-export const mapStateToProps = ({ posts }) => ({
-   fetch: posts.Arrdata,
-   error: posts.error
- });
- 
- export const mapDispatchToProps = (dispatch) => ({
-   getData: (path) => {
-     dispatch(ACTION_GET_POSTSMIDL(path));
+export const mapStateToProps = ({ posts, todos }) => ({
+   // fetch: posts.Arrdata,
+   // error: posts.error,
+   // fetchTodo: todos.Arrdata,
+   // errorTodo: todos.error
+});
+
+export const mapDispatchToProps = (dispatch) => ({
+   getPost: (path) => {
+      dispatch(ACTION_GET_POSTSMIDL(path));
+   }, // 2. Передаем наш path в ЭКШН МИДЛВАРКИ
+   getTodos: (path) => {
+      dispatch(ACTION_GET_TODOSMIDL(path));
    },
- });
- 
- export default connect(mapStateToProps, mapDispatchToProps)(RouterData);
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(RouterData);

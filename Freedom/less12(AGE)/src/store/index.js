@@ -27,6 +27,6 @@ const composedEnhancers = compose(
 
 const store = createStore(rootReducer, initialState, composedEnhancers);
 
-sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga); // РУтовая сага, где лежат все остальыне саги, работает по схеме редьюссера по сути
 
 export default store;

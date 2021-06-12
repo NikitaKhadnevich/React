@@ -14,8 +14,8 @@ const ChildrenParent = () => {
          <h3>Блок рисует Имя {parentdata.name}</h3>
          <Child>
             {parentdata}
-         </Child>
-      </div>
+         </Child> 
+      </div> // Передаем чайлд
    )
 }
 

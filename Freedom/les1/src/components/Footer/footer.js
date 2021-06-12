@@ -8,8 +8,8 @@ const Footer = () => {
       <div className='footer'>
          <div className='phoneBlock'>
             <Slogan message={phoneData.name}/>
-            <Slogan message={phoneData.phone}/>
-         </div>
+            <Slogan message={phoneData.phone}/> 
+         </div> 
          <div className='adressBlock'>
             <Slogan message={adressData.name}/>
             <Slogan message={adressData.adress}/>

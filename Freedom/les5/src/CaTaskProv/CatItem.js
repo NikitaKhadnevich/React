@@ -21,17 +21,17 @@ class CatItem extends React.Component {
    
    
    render() {
-      const { cat } = this.props;
-      console.log('cat', cat)
-      // Забираю пропсами из  Accum результат фетча  CaTask
+      const { cat } = this.props; // Забираю пропсами из  Accum результат фетча  CaTask
+      
+      console.log('cat from CatItem', cat)
       return Boolean(cat) && (
          <>  
             <button onClick={this.handleClick}>Click</button> 
             <h3> About cats </h3>
             <div className='myCats'>
-               {this.catList.map(item => <CatRender key={item.id} {...item} />)}
-            </div>
-         </>   
+               {this.catList.map(item => <CatRender key={item.id} {...item} />)} 
+            </div> 
+         </>   // Мы мапаем массив массив с cat и передаем  через провайдер уже элементы в блок отрисовки
       )
    }
 }

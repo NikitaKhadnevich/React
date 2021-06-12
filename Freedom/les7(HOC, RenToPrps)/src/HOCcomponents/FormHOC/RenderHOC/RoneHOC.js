@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RoneHOC = (Component) => {
+const RoneHOC = (Component) => { // 2. Передаем компонент
    return class extends React.Component {
       state = {
          data: {
@@ -29,13 +29,13 @@ const RoneHOC = (Component) => {
 
    render() {
       const { data } = this.state
-      console.log('data', data)
+      console.log('data', data) // А ниже он уже рндерется в верстку
       return (
          <>
-         <div className='myForm'>
-               <form>
-                  <>
-                     <Component data={data} {...this.props} />
+         <div className='myForm'>  
+               <form> 
+                  <> 
+                     <Component data={data} {...this.props} /> 
                      <h4>Registration</h4>
                      <input id='cheker'type="checkbox" name="option1" value="a2"/>
                      <input type="text" placeholder="Enter Second Name" name="secName" onChange={this.handlesecondName}/>

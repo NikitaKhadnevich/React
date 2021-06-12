@@ -35,27 +35,27 @@ const Rone = () => {
 
    return (
       <>
-        <div className='myForm'>
-            <form>
-            <ShowForm render={( {name, email, pass} ) => {
-               console.log(name, email, pass);
-               PropsToState(name,email,pass)
-                  return(
-                     <>
-                     <h4>Registration</h4>
-                     <input id='cheker'type="checkbox" name="option1" value="a2"/>
-                     <input type="text" placeholder="Enter Second Name" name="name" onChange={handlesecondName}/>
-                     <input type="text" placeholder="Enter Birh Year" name="email" onChange={handlebirth}/>
-                     <input type="text" placeholder="Enter Number" name="pass" onChange={handletelNumb}/>
-                     <button>Register</button>
-                     </>
-                  )   
-               }}
-            />
+         <div className='myForm'> 
+            <form> 
+               <ShowForm render={( {name, email, pass} ) => {
+                  console.log(name, email, pass);
+                  PropsToState(name,email,pass)
+                     return(
+                        <>
+                        <h4>Registration</h4>
+                        <input id='cheker'type="checkbox" name="option1" value="a2"/>
+                        <input type="text" placeholder="Enter Second Name" name="name" onChange={handlesecondName}/>
+                        <input type="text" placeholder="Enter Birh Year" name="email" onChange={handlebirth}/>
+                        <input type="text" placeholder="Enter Number" name="pass" onChange={handletelNumb}/>
+                        <button>Register</button>
+                        </>
+                     )   
+                  }}
+               />
             </form>
-         </div>
+         </div> 
          {/* {props.render( {name, email, pass, secondName, birth, telNumb} )} */}
-      </>
+      </>// Суть метода = вместо элементов мы передаем по сути функцию ShowForm, и она уже внутри так сказать "разворацивается"
    )
 }
 

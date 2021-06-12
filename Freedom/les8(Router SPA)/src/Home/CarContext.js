@@ -1,4 +1,4 @@
-import React from 'react'
+ import React from 'react'
 import { useContext, useState, useEffect } from 'react';
 import  DataContext from './Context/DataContext'
 import Cars from './Components/Cars'
@@ -11,13 +11,13 @@ function CarContext(props) {
 
    return (
       <>
-          <h3> Добро пожаловать на наш каталог автомобилей</h3>
+         <h3> Добро пожаловать на наш каталог автомобилей</h3>
          <Router>
             <div className='testCar'>
                <div className='navigation'>
                <Link to='/home'>Home</Link>
                <Link to='/cars'>Cars</Link>
-                </div>
+               </div>
                <Switch>
                   <Route path='/home' exact component={Home} />
                   <Route exact path='/cars' component={Cars} />
