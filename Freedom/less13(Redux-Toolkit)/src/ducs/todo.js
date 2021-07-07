@@ -17,7 +17,7 @@ const todoReducer = createSlice(
       TEST_TODO: (state, action) => { state.test[action.payload] = action.payload
       }
    }
-}
+   }
 )
 
 export default todoReducer.reducer;

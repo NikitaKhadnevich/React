@@ -12,12 +12,13 @@ import { counterSelector, dataSelector } from '../ducs/selectors'
    return (
       <>
          <h5>List</h5>
-         { count.count.map((item, i) => {
+         {count && count.map((item, i) => {
          return (
-               <ul>{item}</ul>
+               <p>{item}</p>
             )
          })}
-         { data.data && data.data.map((item, i) => {
+         <h4>Render Arr</h4>
+         { data && data.map((item, i) => {
          return (
                <p>{item}</p>
             )

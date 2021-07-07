@@ -4,7 +4,6 @@ import { dataSelector, counterSelector } from '../ducs/selectors'
 import List from './list'
 
 
-
 const Counter = (props) => {
    const count = useSelector(counterSelector)
    const data = useSelector(dataSelector)

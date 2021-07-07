@@ -5,5 +5,5 @@ const middlewares = []; // И мидлварки
 
 export default configureStore( {
    reducer: rootReducer,
-   middlewaressss: [...middlewares], // Кофигурим это все
+   middlewares: [...middlewares], // Кофигурим это все
 })

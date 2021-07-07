@@ -1,10 +1,11 @@
 import { put, takeLatest } from 'redux-saga/effects';
+import { GET_STRU_REQUESTED, GET_STRU_SUCCEED, GET_STRU_FAILED } from '../structures/Act_Red_Kit'
 import {
-  GET_STRU_REQUESTED,
+  // GET_STRU_REQUESTED,
   GET_STRU_DETAIL_REQUESTED,
-  ACTION_GET_STRU_Succeed,
+  // ACTION_GET_STRU_Succeed,
   ACTION_GET_STRU_DETAIL_Succeed,
-  ACTION_GET_STRU_FAILED,
+  // ACTION_GET_STRU_FAILED,
   ACTION_GET_STRU_DETAIL_FAILED
 } from './actions';
 import { proxy, errorMes } from '../../components/Api/Api'
@@ -20,9 +21,11 @@ export function* getSTRUSaga({ payload }) {
       );
     const res = yield stru.json();
 
-    yield put(ACTION_GET_STRU_Succeed(res));
+    // yield put(ACTION_GET_STRU_Succeed(res));
+    yield put(GET_STRU_SUCCEED(res));
   } catch (error) {
-    yield put(ACTION_GET_STRU_FAILED(errorMes));
+    yield put(GET_STRU_FAILED(errorMes));
+    // yield put(ACTION_GET_STRU_FAILED(errorMes));
   }
 }
 
