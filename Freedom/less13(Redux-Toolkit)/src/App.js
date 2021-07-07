@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Counter from './component/Counter'
 import Todo from './component/Todo'
+import Data from './component/Data'
 
 
 const App = () => {
@@ -12,6 +13,8 @@ const App = () => {
     <Counter />
     <hr></hr>
     <Todo />
+    <hr></hr>
+    <Data />
   </>
   )
 }

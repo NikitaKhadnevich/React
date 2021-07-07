@@ -4,10 +4,8 @@ import { createReducer, createAction } from '@reduxjs/toolkit'
 
 //Создаем Стэйт
 export const initCounterState = {
-   data: {
-      item: [1,2,3],
-      count: 0,
-   }
+   data: [1,2,3],
+   count: 0,
 } 
 
 export const INCREMENT = 'INCREMENT';
@@ -17,13 +15,12 @@ export const DECREMENT = 'DECREMENT';
 export const ACTION_INCREMENT = createAction(INCREMENT)
 export const ACTION_DECREMENT = createAction(DECREMENT)
 
-
-// Созалем Редьюссер
+// Созадем Редьюссер
 export default createReducer(initCounterState, {
    [ACTION_INCREMENT]: (state, action) => {
-      state.data.count += action.payload
+      state.count += action.payload
    },
    [ACTION_DECREMENT]: (state, action) => {
-      state.data.count -= action.payload
+      state.count -= action.payload
    },
 })

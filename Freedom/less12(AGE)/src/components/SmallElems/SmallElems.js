@@ -56,7 +56,6 @@ export const ListAge = (props) => {
          }
          </> :
          <>
-
             {data && Sort(data).map((item, i) => 
                {
                   return (
@@ -101,16 +100,20 @@ export const ButtonClose = (props) => {
 }
 
 export const Sort = (data) => {
-   const sortArr = (a,b) => a.name > b.name ? 1 : -1;
+   const sortArr = (a,b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1;
    return data.sort(sortArr)
 }
 
 export const SortStructure = (data) => {
-   const sortArr = (a,b) => a.name > b.name ? 1 : -1;
-   data.sort(sortArr)
-   return [...new Set(data.map((item, i) => item.name))];
+   const clear = {}
+   data.forEach((element,i) => {
+      console.log(element)
+   });
+ 
+   const setArr = [...new Set(data.map((item, i) => item.name))];
+   const sortArr = (a,b) => a.toLowerCase() > b.toLowerCase() ? 1 : -1;
+   return setArr.sort(sortArr)
 }
-
 
 export default HomePage
 

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
-import { ACTION_GET_STRU_Requested } from '../../ducks/structures/actions';
+// import { ACTION_GET_STRU_Requested } from '../../ducks/structures/actions';
+import { GET_STRU_REQUESTED, GET_STRU_SUCCEED, GET_STRU_FAILED } from '../../ducks/structures/'
 import { StructuresData } from '../../ducks/structures/selectors'
 import  { baseUrl, Urlpath } from '../Api/Api'
 
