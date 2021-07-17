@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';// 
 import { useDispatch, useSelector } from 'react-redux';
 import { ACTION_GET_CIVIL_Requested } from '../../ducks/civil/actions';
 import { Civildata } from '../../ducks/civil/selectors'
@@ -18,7 +18,6 @@ const Civil = (props) => {
       dispatches(ACTION_GET_CIVIL_Requested(`${url}/${path}`));
     } else return null
   }
-
   useEffect(() => {
     getFetch(baseUrl, civilizations, data)
   }, []);
