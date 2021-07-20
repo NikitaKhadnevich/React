@@ -1,5 +1,5 @@
 export const baseUrl = 'https://age-of-empires-2-api.herokuapp.com/api/v1'
-export const proxy = 'https://cors-anywhere.herokuapp.com/';
+export const proxy = 'https://cors-anywhere.herokuapp.com/'; // Используем CORS
 export const errorMes = 'Ошибка запроса :('
 
 export const Urlpath = {
