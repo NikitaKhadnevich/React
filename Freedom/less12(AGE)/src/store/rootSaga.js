@@ -11,7 +11,7 @@ function* rootSaga() {
     watchUNITSaga(),
     watchDETAILSaga(),
     watchSTRUSaga(),
-    watchStruDETAILSaga(),
+    // watchStruDETAILSaga(), //Если Spa будет расширяться
     watchTechSaga(),
     watchTechDetailSaga()
   ]);
