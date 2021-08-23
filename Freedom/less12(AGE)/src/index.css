@@ -320,9 +320,11 @@ ul {
    display: flex;
    align-items: center;
    position: fixed;
-   justify-content: center;
+   justify-content: space-between;
    background: linear-gradient(to top, rgba(87, 93, 0, 0.7), rgba(0 ,0, 0, 0.9));
    z-index: 99;
+   flex-direction: column;
+
    }
    
    .block {

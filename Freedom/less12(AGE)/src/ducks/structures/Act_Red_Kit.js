@@ -10,7 +10,7 @@ export const initialStruState = {
    path: ''
 };
 
-const structures = createSlice(
+export const structures = createSlice(
    {
       name: 'structures-reducer',
       initialState: initialStruState,

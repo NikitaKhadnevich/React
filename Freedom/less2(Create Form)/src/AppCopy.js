@@ -58,7 +58,7 @@ class AppCopy extends React.Component {
       }
    }; 
    
-   oneClick = (event) => {
+   oneClick = () => {
       const { data: {name, email, passw} } = this.state;
       this.props.upDataFRST(name, email, passw) // Вызываю функцию родителя и передаю данные от РЕБЕНКА => РОДИТЕЛЮ через колбэк
    }

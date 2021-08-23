@@ -1,5 +1,5 @@
-import AppCopy from './AppCopy'
 import React from 'react';
+import AppCopy from './AppCopy'
 import VisualForm from './VisualForm'
 
 class Result extends React.Component {

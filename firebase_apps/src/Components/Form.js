@@ -20,8 +20,8 @@ function Form() {
    const handleSubmit = (e) => {
       e.preventDefault()
       //CREATE
-       /* setRef.current.set(data) // 3.1 Отправляем данные с data уже в реф через:
-      - метод set - ПОЛНОСТЬЮ ПРЕЗАПИСЫВАЕТ ДАННЫЕ БАЗЫ ПО ПУТИ .ref('/SET_DATA')*/
+      setRef.current.set(data) /* 3.1 Отправляем данные с data уже в реф через:
+      - метод set - ПОЛНОСТЬЮ ПРЕЗАПИСЫВАЕТ ДАННЫЕ БАЗЫ ПО ПУТИ .ref('/SET_DATA')
       // setRef.current.child(`KEY_${data.name}`).set(data) 
       /* - метод child - СОЗДАЕТ Чайлд ОТ РОДИТЕЛЯ '/SET_DATA' c именем KEY_${data.name} и полями email name. Если ключи совпадают - перезаписывается имя KEY_${data.name} 
       //setRef.current.child(`/value/name/res/end)`).set(data) //можно создавать дофига поддиректорий (set_data/value/name/res/end) можно создать новую рефу и убрать длинную ссылку*/
@@ -31,12 +31,12 @@ function Form() {
       /*
       - метод update работает схоже с child однако также обновляет поле */
 
-      //DELETE
-      /*setRef.current.child(`KEY_${data.name}`).set(null)
-      - метод child также может затирать дату целевого объекта, путем передачи нулевого значения set(null)*/
-      /*setRef.current.child(data.name).set(null) 
-      setRef.current.child(data.name).remove()
-      - методы удаляют поддерево полностью */
+      // DELETE
+      //setRef.current.child(`KEY_${data.name}`).set(null)
+      // - метод child также может затирать дату целевого объекта, путем передачи нулевого значения set(null)
+      //setRef.current.child(data.name).set(null) 
+      // setRef.current.child(data.name).remove()
+      //- методы удаляют поддерево полностью
       
       //РАБОТА С МАССИВАМИ
       //**********PUSH************ */
@@ -44,13 +44,10 @@ function Form() {
       //pushRef.current.child('/value/name/res/end').push(data) // можно создавать дофига поддиректорий (set_data/value/name/res/end) можно создать новую рефу и убрать длинную ссылку*/
 
       //**********DELETE************ */
-      pushRef.current.child('-MdCjku4586_h4-4Zys6').remove()  // метод для удаления нам нужно знать значение уникального ключа
+      //pushRef.current.child('-MdCjkFw5lP3guOcIGd3').remove()  // метод для удаления нам нужно знать значение уникального ключа
 
       //**********UPDATE************ */
-      pushRef.current.child('-MdCjkFw5lP3guOcIGd3').update(data) // метод для обновления нам нужно знать значение уникального ключа
-
-
-
+      //pushRef.current.child('-MdCjkFw5lP3guOcIGd3').update(data) // метод для обновления нам нужно знать значение уникального ключа
 
 
 

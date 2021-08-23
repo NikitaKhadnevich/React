@@ -19,6 +19,7 @@ class Table extends React.Component {
    }
 
    componentDidUpdate(prevProps) {
+      console.log(`prevProps`, prevProps)
       if (prevProps.number !== this.props.number) {
          let carArr = this.state.carArr;
          let carObj = {
